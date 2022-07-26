@@ -1,0 +1,19 @@
+
+<section class="container">
+<div class="row">
+  <h1 class="text-center">RBNB</h1>
+  <h2 class="text-center"> {{listApp.length}} Appartements encore disponibles</h2>
+</div>
+<div class="col-md-8 mx-auto m-1">
+  <input #searchBox (keyup)="filtreAppart(searchBox.value)" type="search" class="form-control" placeholder="Cherche ton Appartement">
+</div>
+<div class="row d-flex justify-content-center">
+  <div *ngFor="let home of listApp" class="col-2 m-4 text-center" [ngClass]="{'box':!home.booked, 'indispobox':home.booked}">
+      <img width="200" height="200" [src]="home.picture" alt="">
+    <p><strong>{{home.name}}</strong></p>
+    <p><strong>{{home.price}}€</strong>/nuit</p>
+    <Button class="btn btn-primary" [routerLink]="['/detail',home.id]">Reserver Maintenant</Button>
+  </div>
+</div>
+</section>
+<app-footer></app-footer>

@@ -1,0 +1,31 @@
+<section class="container">
+
+  <div class="row mx-auto mt-5">
+    <div class="col-md-7 mx-auto m-5" >
+      <h3 class="text-center">{{appart.name}}</h3>
+      <div class=" mx-auto">
+          <h1 class="text-center"><img width="300" [src]="appart.picture" alt=""></h1>
+      </div>
+        <ul class="list-group">
+          <li class="list-group-item"><strong>NOMBRE DE PERSONNE:</strong> {{appart.humain}}</li>
+          <li class="list-group-item"><strong>PRIX:</strong> {{appart.price}} euros</li>
+          <hr>
+          <div>
+            <p>Date d'arriver</p>
+          <input type="date" class="form-control" id="depart" [(ngModel)]="appart.arriver">
+          </div>
+          <hr>
+          <div>
+            <p>Date de depart</p>
+          <input type="date" class="form-control" id="depart" [(ngModel)]="appart.depart">
+          </div>
+        </ul>
+        </div>
+  <div class="col-md-7 mx-auto">
+      <button class="btn btn-primary mx-1" (click)="validate()">RESERVER</button>
+      <button class="btn btn-danger mx-1" (click)="annuler()">ANNULER LA RESERVATION</button>
+      <button class="btn btn-secondary mx-1" (click)="back()">RETOUR</button>
+      <button  [routerLink]="['/admin',nombreURL]" class="btn btn-success" >Modification (Admin only)</button>
+    </div>
+  </div>
+</section>
